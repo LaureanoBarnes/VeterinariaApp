@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #C2E4F2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 40px;
+    height: 40px;
+}
+
+
+header h1 {
+    font-size: 24px;
+    color: #000;
+}
+
+header h2 {
+    font-size: 18px;
+    color: #575757;
+}
+
+.camilla {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.estado {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.estado.disponible {
+    color: #002900;
+}
+
+.estado.reservado {
+    color: #474e00;
+}
+
+.estado.ocupado {
+    color: #890000;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reservar-btn {
+    background-color: #008000;
+    color: #ffffff;
+}
+
+.ocupar-btn {
+    background-color: orange;
+    color: white;
+}
+
+.desocupar-btn {
+    background-color: red;
+    color: white;
+}
+
+.ficha-btn {
+    background-color: black;
+    color: white;
+}
+
+.volver-btn {
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+.camilla img {
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    display: block;
+    margin: 0 auto 10px; /* Centra la imagen y añade espacio debajo */
+}
+
+
+.ficha-medica {
+    background-color: #F2F2F2;
+    border: 1px solid #CCC;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.ficha-medica h3 {
+    margin-top: 0;
+    color: #575757;
+}
+
+.ficha-medica p {
+    font-size: 14px;
+    color: #575757;
+}
+
+#cerrarFicha {
+    background-color: #E8A4B0;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#cerrarFicha:hover {
+    background-color: #D68B97;
+}
+
+.ficha-medica {
+    display: none;
+    opacity: 0;
+    transform: translate(-50%, -60%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ficha-medica.mostrar {
+    display: block;  /* Mostrar el modal */
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.modal-overlay {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.mostrar {
+    display: block; /* Mostrar el fondo */
+    opacity: 1;
+}
+
+/* Fondo semi-transparente cuando el modal esté abierto */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 999;
+    display: none; /* Por defecto está oculto */
+}

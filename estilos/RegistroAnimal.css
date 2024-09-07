@@ -1,0 +1,144 @@
+/* Estilo general del formulario */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cee9f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    padding: 20px;
+}
+
+.header {
+    background-color: #FFF;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header-left span {
+    font-size: 18px;
+    color: #000;
+}
+
+form {
+    background-color: #F8D7DA; /* Fondo rosado */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #575757;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: #E8A4B0;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Botón de guardar */
+button[type="submit"] {
+    background-color: #575757;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #E8A4B0;
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+/* Botón de volver */
+button[type="button"] {
+    background-color: #000000;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #E8A4B0;
+    transform: scale(1.05);
+}
+
+button[type="button"]:active {
+    transform: scale(0.95);
+}
+
+/* Animación al enviar el formulario */
+form.submitted {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}

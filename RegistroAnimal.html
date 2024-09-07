@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria</title>
+    <link rel="stylesheet" href="estilos/RegistroAnimal.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <img src="IconoCabezal/IconoVeterinaria.svg" alt="Icono Veterinaria">
+                <span>Clínica Veterinaria</span>
+            </div>
+            <div class="header-right">
+                <img src="IconoCabezal/homeIcono.svg" alt="Home">
+            </div>
+        </div>
+
+<form>
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
+
+    <div>
+        <label for="especie">Especie:</label>
+        <input type="text" id="especie" name="especie" required>
+    </div>
+
+    <div>
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" name="raza" required>
+    </div>
+
+    <div>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" required>
+    </div>
+
+    <div>
+        <label for="genero">Género:</label>
+        <input type="text" id="genero" name="genero" required>
+    </div>
+
+    <div>
+        <label for="peso">Peso:</label>
+        <input type="text" id="peso" name="peso" required>
+    </div>
+
+    <div>
+        <label for="veterinario">Veterinario:</label>
+        <select id="veterinario" name="veterinario">
+            <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
+            <option value="Dra. Ana García">Dra. Ana García</option>
+            <!-- Añade más veterinarios según sea necesario -->
+        </select>
+    </div>
+
+    <div>
+        <label for="camilla">Camilla (Ubicación):</label>
+        <select id="camilla" name="camilla">
+            <option value="observacion">Observación</option>
+            <option value="terapia-intensiva">Terapia Intensiva</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="medicamentos">Medicamentos:</label>
+        <input type="text" id="medicamentos" name="medicamentos">
+    </div>
+
+    <div>
+        <label for="dieta">Dieta recomendada:</label>
+        <input type="text" id="dieta" name="dieta">
+    </div>
+
+    <div>
+        <label for="actividades">Actividades y horario:</label>
+        <input type="text" id="actividades" name="actividades">
+    </div>
+
+    <div>
+        <label for="notas">Notas adicionales:</label>
+        <textarea id="notas" name="notas"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Guardar</button>
+        <a href="Consulta.html"><button type="button" >Volver</button></a>
+    </div>
+</form>
+
+<script> src="Js/Registro.js"</script>
+

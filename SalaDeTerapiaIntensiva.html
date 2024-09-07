@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Terapia intensiva - Camillas</title>
+    <link rel="stylesheet" href="estilos/Salas.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="IconoCabezal/IconoVeterinaria.svg" alt="Icono Veterinaria">
+            <h1>Sala de observación</h1>
+            <h2>Camillas</h2>
+        </header>
+        
+        <!-- Camillas -->
+        <div class="camilla" id="camilla1">
+            <img src="IconoSalas/stretcher-2.svg" alt="Camilla">
+            <p class="estado disponible">Disponible</p>
+            <button class="reservar-btn" onclick="reservarCamilla('camilla1')">Reservar</button>
+        </div>
+
+        <div class="camilla" id="camilla2">
+            <img src="IconoSalas/stretcher-2.svg" alt="Camilla">
+            <p class="estado reservado">Reservado</p>
+            <button class="ocupar-btn" onclick="ocuparCamilla('camilla2')">Ocupar</button>
+            <button class="desocupar-btn" onclick="desocuparCamilla('camilla2')">Desocupar</button>
+        </div>
+
+        <div class="camilla" id="camilla3">
+            <img src="IconoSalas/stretcher-2.svg" alt="Camilla">
+            <p class="estado ocupado">Ocupado</p>
+            <button class="desocupar-btn" onclick="desocuparCamilla('camilla3')">Desocupar</button>
+            <button class="ficha-btn" onclick="verFicha('camilla3')">Ficha</button>
+        </div>
+
+        <div class="camilla" id="camilla4">
+            <img src="IconoSalas/stretcher-2.svg" alt="Camilla">
+            <p class="estado disponible">Disponible</p>
+            <button class="reservar-btn" onclick="reservarCamilla('camilla4')">Reservar</button>
+        </div>
+
+        <div class="camilla" id="camilla5">
+            <img src="IconoSalas/stretcher-2.svg" alt="Camilla">
+            <p class="estado disponible">Disponible</p>
+            <button class="reservar-btn" onclick="reservarCamilla('camilla5')">Reservar</button>
+        </div>
+
+        <button class="volver-btn" onclick="volver()">Volver</button>
+    </div>
+    
+
+    <div id="fichaMedica" class="ficha-medica">
+        <h3>Ficha Médica</h3>
+        <p>Raza: <span id="fichaRaza"></span></p>
+        <p>Género: <span id="fichaGenero"></span></p>
+        <p>Edad: <span id="fichaEdad"></span></p>
+        <p>Veterinario a cargo: <span id="fichaVeterinario"></span></p>
+        <p>Motivo de Ingreso: <span id="fichaMotivoIngreso"></span></p>
+        <p>Tratamiento: <span id="fichaTratamiento"></span></p>
+        <p>Fecha de Ingreso: <span id="fichaFechaIngreso"></span></p>
+        <p>Historial Médico: <span id="fichaHistorialMedico"></span></p>
+        <p>Notas del Veterinario: <span id="fichaNotasVeterinario"></span></p>
+        <button id="cerrarFicha">Cerrar</button>
+    </div>
+    
+    <!-- Fondo semi-transparente -->
+    <div class="modal-overlay"></div>
+    
+
+    <script src="Js/script.js"></script>
+</body>
+</html>
