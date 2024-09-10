@@ -36,6 +36,7 @@ header h2 {
     color: #575757;
 }
 
+
 .camilla {
     background-color: #f2f2f2;
     padding: 10px;
@@ -68,6 +69,49 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+}
+
+/* Estilos base para los botones */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Añadimos más tiempo a la opacidad */
+}
+
+/* Diferentes estilos para cada botón */
+#reservar {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+#desocupar {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+#ocupar {
+    background-color: #008CBA; /* Azul */
+    color: white;
+}
+
+/* Animación al hacer hover sobre los botones */
+button:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el ratón */
+    opacity: 0.9; /* Reduce ligeramente la opacidad */
+}
+
+/* Transición para el cambio de estado entre botones */
+button.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+button.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .reservar-btn {
@@ -180,4 +224,58 @@ button {
     background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
     z-index: 999;
     display: none; /* Por defecto está oculto */
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Ancho total de la pantalla */
+    height: 100vh; /* Altura total de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+/* Estilo del círculo del loader */
+.loader .spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #C2E4F2; /* Color del fondo */
+    border: 6px solid rgba(240, 192, 240, 0.5); /* Borde exterior */
+    border-top-color: #f0c; /* Color del borde superior */
+    animation: spin 1.2s linear infinite;
+}
+
+/* Ocultar el loader */
+.hidden {
+    display: none;
+}
+
+/* Keyframes para la animación de giro */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+p.status-text {
+    font-family: 'Poppins', sans-serif; /* Cambia la fuente por una más estilizada */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Añade una sombra suave */
+    transition: transform 0.3s ease, color 0.3s ease; /* Añade una animación suave */
+}
+
+p.status-text:hover {
+    transform: scale(1.1); /* Hace que el texto se agrande al pasar el mouse por encima */
+    color: #f0c; /* Cambia de color al hacer hover */
 }

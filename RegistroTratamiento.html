@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de los tratamientos</title>
+    <link rel="stylesheet" href="estilos/Registro.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <img src="IconoCabezal/IconoVeterinaria.svg" alt="Logo Clínica" class="logo">
+            <h2>Detalles de los tratamientos</h2>
+            <a href="home.html" class="home-icon">
+                <i class="fa fa-home"></i>
+            </a>
+        </div>
+        
+        <table class="treatment-details">
+            <thead>
+                <tr>
+                    <th>Veterinario</th>
+                    <th>Fecha y Hora</th>
+                    <th>Especie</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dr. Sofía Martínez</td>
+                    <td>2023-06-23<br>10:30 AM</td>
+                    <td>Perro</td>
+                    <td>Antibiótico XYZ<br>Alimento Balanceado<br>Seguimiento en 3 días</td>
+                </tr>
+                <!-- Agrega más filas aquí si es necesario -->
+            </tbody>
+        </table>
+
+        <div class="back-button">
+            <button type="button" onclick="goBack();">Volver</button>
+        </div>
+    </div>
+    <script src="Js/RegistroTratamiento.js"></script>
+</body>
+</html>

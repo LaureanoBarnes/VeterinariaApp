@@ -63,7 +63,7 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"], select, textarea {
+input[type="text"], select, textarea, input[type="number"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -73,7 +73,7 @@ input[type="text"], select, textarea {
     transition: border-color 0.3s ease;
 }
 
-input[type="text"]:focus, select:focus, textarea:focus {
+input[type="text"]:focus, select:focus, textarea:focus, input[type="number"]:focus {
     border-color: #E8A4B0;
     outline: none;
 }
@@ -83,62 +83,80 @@ textarea {
     resize: vertical;
 }
 
-/* Botón de guardar */
+/* Botones */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 button[type="submit"] {
     background-color: #575757;
     color: #FFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover, button[type="button"]:hover {
     background-color: #E8A4B0;
     transform: scale(1.05);
 }
 
-button[type="submit"]:active {
+button[type="submit"]:active, button[type="button"]:active {
     transform: scale(0.95);
 }
 
-/* Botón de volver */
+
 button[type="button"] {
     background-color: #000000;
     color: #FFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
     margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button[type="button"]:hover {
-    background-color: #E8A4B0;
-    transform: scale(1.05);
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    z-index: 1000;
 }
 
-button[type="button"]:active {
-    transform: scale(0.95);
+/* Estilo del círculo del loader */
+.spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #C2E4F2;
+    border: 6px solid rgba(240, 192, 240, 0.5); /* Borde exterior */
+    border-top-color: #f0c; /* Color del borde superior */
+    animation: spin 1.2s linear infinite;
 }
 
-/* Animación al enviar el formulario */
-form.submitted {
-    animation: fadeOut 0.5s forwards;
+.hidden {
+    display: none;
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
-    to {
-        opacity: 0;
-        transform: scale(0.9);
+    100% {
+        transform: rotate(360deg);
     }
+}
+
+/* Estilo para el mensaje de confirmación o error */
+#mensaje {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
 }

@@ -123,9 +123,44 @@ document.getElementById("cerrarFicha").addEventListener("click", function() {
 
 
 function volver() {
+    const loader = document.getElementById('loader');
+    
+    // Mostrar loader
+    loader.classList.remove('hidden');
+
+    // Verificar si hay una página anterior para volver, de lo contrario ir a "Home"
     if (document.referrer === "") {
-        window.location.href = "home.html";
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 1500);  // Simula una carga
     } else {
-        window.history.back();
+        setTimeout(() => {
+            window.history.back();
+        }, 1500);  // Simula una carga
     }
+}
+
+function cambiarBoton(estado) {
+    const btnReservar = document.getElementById('reservar');
+    const btnDesocupar = document.getElementById('desocupar');
+    const btnOcupar = document.getElementById('ocupar');
+
+    // Escondemos todos los botones con la clase "hidden" antes de cambiar
+    btnReservar.classList.add('hidden');
+    btnDesocupar.classList.add('hidden');
+    btnOcupar.classList.add('hidden');
+
+    // Esperamos 500ms para que el fade-out termine antes de mostrar el nuevo botón
+    setTimeout(() => {
+        if (estado === 'reservar') {
+            btnReservar.classList.remove('hidden');
+            btnReservar.classList.add('visible');
+        } else if (estado === 'desocupar') {
+            btnDesocupar.classList.remove('hidden');
+            btnDesocupar.classList.add('visible');
+        } else if (estado === 'ocupar') {
+            btnOcupar.classList.remove('hidden');
+            btnOcupar.classList.add('visible');
+        }
+    }, 500); // Ajuste del tiempo para que coincida con la transición de opacidad
 }

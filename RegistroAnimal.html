@@ -18,79 +18,91 @@
             </div>
         </div>
 
-<form>
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-    </div>
+        <form id="registro-form" onsubmit="mostrarLoader(event)">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre del animal" required>
+            </div>
 
-    <div>
-        <label for="especie">Especie:</label>
-        <input type="text" id="especie" name="especie" required>
-    </div>
+            <div>
+                <label for="especie">Especie:</label>
+                <input type="text" id="especie" name="especie" placeholder="Especie del animal" required>
+            </div>
 
-    <div>
-        <label for="raza">Raza:</label>
-        <input type="text" id="raza" name="raza" required>
-    </div>
+            <div>
+                <label for="raza">Raza:</label>
+                <input type="text" id="raza" name="raza" placeholder="Raza del animal" required>
+            </div>
 
-    <div>
-        <label for="edad">Edad:</label>
-        <input type="text" id="edad" name="edad" required>
-    </div>
+            <div>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="Edad en años" required>
+            </div>
 
-    <div>
-        <label for="genero">Género:</label>
-        <input type="text" id="genero" name="genero" required>
-    </div>
+            <div>
+                <label for="genero">Género:</label>
+                <input type="text" id="genero" name="genero" placeholder="Género del animal" required>
+            </div>
 
-    <div>
-        <label for="peso">Peso:</label>
-        <input type="text" id="peso" name="peso" required>
-    </div>
+            <div>
+                <label for="peso">Peso:</label>
+                <input type="number" id="peso" name="peso" placeholder="Peso en kg" required>
+            </div>
 
-    <div>
-        <label for="veterinario">Veterinario:</label>
-        <select id="veterinario" name="veterinario">
-            <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
-            <option value="Dra. Ana García">Dra. Ana García</option>
-            <!-- Añade más veterinarios según sea necesario -->
-        </select>
-    </div>
+            <div>
+                <label for="veterinario">Veterinario:</label>
+                <select id="veterinario" name="veterinario">
+                    <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
+                    <option value="Dra. Ana García">Dra. Ana García</option>
+                    <!-- Añade más veterinarios según sea necesario -->
+                </select>
+            </div>
 
-    <div>
-        <label for="camilla">Camilla (Ubicación):</label>
-        <select id="camilla" name="camilla">
-            <option value="observacion">Observación</option>
-            <option value="terapia-intensiva">Terapia Intensiva</option>
-        </select>
-    </div>
+            <div>
+                <label for="camilla">Camilla (Ubicación):</label>
+                <select id="camilla" name="camilla">
+                    <option value="observacion">Observación</option>
+                    <option value="terapia-intensiva">Terapia Intensiva</option>
+                </select>
+            </div>
 
-    <div>
-        <label for="medicamentos">Medicamentos:</label>
-        <input type="text" id="medicamentos" name="medicamentos">
-    </div>
+            <div>
+                <label for="medicamentos">Medicamentos:</label>
+                <input type="text" id="medicamentos" name="medicamentos" placeholder="Medicamentos recetados">
+            </div>
 
-    <div>
-        <label for="dieta">Dieta recomendada:</label>
-        <input type="text" id="dieta" name="dieta">
-    </div>
+            <div>
+                <label for="dieta">Dieta recomendada:</label>
+                <input type="text" id="dieta" name="dieta" placeholder="Dieta recomendada">
+            </div>
 
-    <div>
-        <label for="actividades">Actividades y horario:</label>
-        <input type="text" id="actividades" name="actividades">
-    </div>
+            <div>
+                <label for="actividades">Actividades y horario:</label>
+                <input type="text" id="actividades" name="actividades" placeholder="Actividades recomendadas">
+            </div>
 
-    <div>
-        <label for="notas">Notas adicionales:</label>
-        <textarea id="notas" name="notas"></textarea>
-    </div>
+            <div>
+                <label for="notas">Notas adicionales:</label>
+                <textarea id="notas" name="notas" placeholder="Notas adicionales..."></textarea>
+            </div>
 
-    <div>
-        <button type="submit">Guardar</button>
-        <a href="Consulta.html"><button type="button" >Volver</button></a>
-    </div>
-</form>
+            <div>
+                <button type="submit">Guardar</button>
+                <button type="button" onclick="goBack()">Volver</button>
+            </div>
 
-<script> src="Js/Registro.js"</script>
+            <!-- Mensaje de confirmación o error -->
+        <div id="mensaje" class="hidden"></div>
+
+        <!-- Loader -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+        </div>
+        
+        </form>
+
+        <script src="Js/Registro.js"></script>
+    </div>
+</body>
+</html>
 
