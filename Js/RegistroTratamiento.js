@@ -1,62 +1,29 @@
-function goBack() {
-    const loader = document.getElementById("loader");
-    
-    if (!loader.classList.contains("hidden")) {
-        return;  // Si el loader ya está visible, no permitir más acciones
-    }
-
-    loader.classList.remove("hidden");
-
-    setTimeout(function() {
-        window.history.back();
-    }, 1000);
-}
-
-document.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-        document.getElementById("loader").classList.remove("hidden");
-    });
-});
-
-document.getElementById('volver-btn').addEventListener('click', function() {
-    const loader = document.getElementById("loader");
-    
-    if (!loader.classList.contains("hidden")) {
-        return;  // Si el loader ya está visible, no hacer nada
-    }
-
-    if (window.history.length > 1) {
-        loader.classList.remove("hidden"); // Muestra el loader
-        setTimeout(function() {
-            window.history.back();
-        }, 1000); // Espera un segundo antes de volver
-    } else {
-        // Si no hay página anterior, redirige al home (index.html)
-        window.location.href = 'index.html';
-    }
-});
-
-document.getElementById('volver-btn').addEventListener('click', function() {
-    const loader = document.getElementById("loader");
-
-    if (!loader.classList.contains("hidden")) {
-        return;  // Si el loader ya está visible, no hacer nada
-    }
-
-    // Verifica si hay historial hacia atrás
-    if (window.history.length > 1) {
-        loader.classList.remove("hidden"); // Muestra el loader
-
-        // Solo volver si no estamos en la misma página
-        if (document.referrer && document.referrer !== window.location.href) {
-            setTimeout(function() {
-                window.history.back();
-            }, 1000); // Espera un segundo antes de volver
-        } else {
-            loader.classList.add("hidden");  // Si no hay página previa válida, oculta el loader
+document.querySelectorAll("a, button").forEach(element => {
+    element.addEventListener("click", function(event) {
+        event.preventDefault();
+        const loader = document.getElementById("loader");
+        
+        // Prevenir que el loader se active varias veces
+        if (!loader.classList.contains("hidden")) {
+            return;
         }
-    } else {
-        window.location.href = 'index.html';  // Redirige al home si no hay historial
-    }
+
+        loader.classList.remove("hidden");
+
+        setTimeout(() => {
+            if (element.tagName === "A") {
+                window.location.href = element.href;
+            } else if (element.tagName === "BUTTON") {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'index.html';
+                }
+            }
+
+            // Ocultar el loader automáticamente después de la acción
+            setTimeout(() => loader.classList.add("hidden"), 2000);
+        }, 1000);
+    });
 });
 

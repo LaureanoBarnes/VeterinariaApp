@@ -114,15 +114,10 @@ function volver() {
     const loader = document.getElementById('loader');
     loader.classList.remove('hidden');
 
-    if (document.referrer === "") {
+
         setTimeout(() => {
-            window.location.href = "home.html";
+            window.location.href = "index.html";
         }, 1500);
-    } else {
-        setTimeout(() => {
-            window.history.back();
-        }, 1500);
-    }
 }
 
 function cambiarBoton(estado) {
