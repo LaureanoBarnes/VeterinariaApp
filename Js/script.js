@@ -123,7 +123,10 @@ function volver() {
             window.history.back();
         }, 1500);
     }
-}
+    // Evento pageshow para ocultar el loader cuando se regresa a la página
+window.addEventListener("pageshow", function() {
+    document.getElementById("loader").classList.add("hidden");
+})};
 
 function cambiarBoton(estado) {
     const btnReservar = document.getElementById('reservar');

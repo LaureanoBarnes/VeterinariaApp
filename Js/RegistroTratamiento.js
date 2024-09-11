@@ -29,5 +29,8 @@ document.querySelectorAll("a, button").forEach(element => {
             // Ocultar el loader tras realizar la acción
             setTimeout(() => loader.classList.add("hidden"), 2000); // Ocultar después de 2s
         }, 1000); // Simula una carga de 1s antes de la redirección o retroceso
+        // Evento pageshow para ocultar el loader cuando se regresa a la página
+window.addEventListener("pageshow", function() {
+    document.getElementById("loader").classList.add("hidden");
     });
-});
+})});

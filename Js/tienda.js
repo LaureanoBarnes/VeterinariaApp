@@ -9,4 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 750);
         });
     });
-});
+    // Evento pageshow para ocultar el loader cuando se regresa a la página
+window.addEventListener("pageshow", function() {
+    document.getElementById("loader").classList.add("hidden");
+})});
