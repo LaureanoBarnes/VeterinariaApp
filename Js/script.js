@@ -62,10 +62,7 @@ function desocuparCamilla(id) {
     camilla.appendChild(reservarBtn);
 }
 
-
-
 function verFicha(id) {
-    // Simulando datos del animal (estos vendrían de la base de datos)
     const animalData = {
         raza: "Labrador",
         genero: "Macho",
@@ -78,7 +75,6 @@ function verFicha(id) {
         notasVeterinario: "Evolución favorable, revisitar en una semana."
     };
 
-    // Asignando los datos a la ficha
     document.getElementById("fichaRaza").textContent = animalData.raza;
     document.getElementById("fichaGenero").textContent = animalData.genero;
     document.getElementById("fichaEdad").textContent = animalData.edad;
@@ -95,14 +91,11 @@ function verFicha(id) {
     fichaMedica.style.display = 'block';
     overlay.style.display = 'block';
 
-    // Añadir la clase para iniciar las transiciones
     setTimeout(() => {
         fichaMedica.classList.add('mostrar');
         overlay.classList.add('mostrar');
-    }, 10); // Pequeño retraso para garantizar que display: block se aplique primero
+    }, 10);
 }
-
-
 
 document.getElementById("cerrarFicha").addEventListener("click", function() {
     const fichaMedica = document.getElementById("fichaMedica");
@@ -111,32 +104,24 @@ document.getElementById("cerrarFicha").addEventListener("click", function() {
     fichaMedica.classList.remove('mostrar');
     overlay.classList.remove('mostrar');
 
-    // Esperar a que termine la transición antes de ocultar completamente
     setTimeout(() => {
         fichaMedica.style.display = 'none';
         overlay.style.display = 'none';
     }, 300);
 });
 
-
-
-
-
 function volver() {
     const loader = document.getElementById('loader');
-    
-    // Mostrar loader
     loader.classList.remove('hidden');
 
-    // Verificar si hay una página anterior para volver, de lo contrario ir a "Home"
     if (document.referrer === "") {
         setTimeout(() => {
             window.location.href = "home.html";
-        }, 1500);  // Simula una carga
+        }, 1500);
     } else {
         setTimeout(() => {
             window.history.back();
-        }, 1500);  // Simula una carga
+        }, 1500);
     }
 }
 
@@ -145,22 +130,17 @@ function cambiarBoton(estado) {
     const btnDesocupar = document.getElementById('desocupar');
     const btnOcupar = document.getElementById('ocupar');
 
-    // Escondemos todos los botones con la clase "hidden" antes de cambiar
     btnReservar.classList.add('hidden');
     btnDesocupar.classList.add('hidden');
     btnOcupar.classList.add('hidden');
 
-    // Esperamos 500ms para que el fade-out termine antes de mostrar el nuevo botón
     setTimeout(() => {
         if (estado === 'reservar') {
             btnReservar.classList.remove('hidden');
-            btnReservar.classList.add('visible');
         } else if (estado === 'desocupar') {
             btnDesocupar.classList.remove('hidden');
-            btnDesocupar.classList.add('visible');
         } else if (estado === 'ocupar') {
             btnOcupar.classList.remove('hidden');
-            btnOcupar.classList.add('visible');
         }
-    }, 500); // Ajuste del tiempo para que coincida con la transición de opacidad
+    }, 500);
 }
