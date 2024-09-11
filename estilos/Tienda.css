@@ -112,6 +112,7 @@ body {
     color: #575757;
 }
 
+
 /* Loader overlay */
 .loader {
     position: fixed;
@@ -138,10 +139,7 @@ body {
     animation: spin 1.2s linear infinite;
 }
 
-/* Ocultar el loader */
-.hidden {
-    display: none;
-}
+
 
 /* Keyframes para la animación de giro */
 @keyframes spin {
@@ -151,4 +149,9 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+/* Ocultar el loader */
+.hidden {
+    display: none;
 }

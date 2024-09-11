@@ -11,5 +11,4 @@ document.querySelectorAll("a, button").forEach(element => {
             }
         }, 1000);
     });
-    loader.classList.remove('none');
 });

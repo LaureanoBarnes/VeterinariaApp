@@ -113,10 +113,16 @@ document.getElementById("cerrarFicha").addEventListener("click", function() {
 function volver() {
     const loader = document.getElementById('loader');
     loader.classList.remove('hidden');
+
+    if (document.referrer === "") {
         setTimeout(() => {
             window.location.href = "index.html";
         }, 1500);
-    loader.classList.remove('none');
+    } else {
+        setTimeout(() => {
+            window.history.back();
+        }, 1500);
+    }
 }
 
 function cambiarBoton(estado) {

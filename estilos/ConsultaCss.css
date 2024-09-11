@@ -71,6 +71,7 @@ body {
     margin: 0;
 }
 
+
 .loader {
     position: fixed;
     top: 0;
@@ -96,10 +97,7 @@ body {
     animation: spin 1.2s linear infinite;
 }
 
-/* Ocultar el loader */
-.hidden {
-    display: none;
-}
+
 
 /* Keyframes para la animación de giro */
 @keyframes spin {
@@ -111,3 +109,7 @@ body {
     }
 }
 
+/* Ocultar el loader */
+.hidden {
+    display: none;
+}

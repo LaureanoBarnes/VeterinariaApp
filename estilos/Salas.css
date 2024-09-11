@@ -225,6 +225,8 @@ button.visible {
     z-index: 999;
     display: none; /* Por defecto está oculto */
 }
+
+
 .loader {
     position: fixed;
     top: 0;
@@ -250,10 +252,7 @@ button.visible {
     animation: spin 1.2s linear infinite;
 }
 
-/* Ocultar el loader */
-.hidden {
-    display: none;
-}
+
 
 /* Keyframes para la animación de giro */
 @keyframes spin {
@@ -278,4 +277,9 @@ p.status-text {
 p.status-text:hover {
     transform: scale(1.1); /* Hace que el texto se agrande al pasar el mouse por encima */
     color: #f0c; /* Cambia de color al hacer hover */
+}
+
+/* Ocultar el loader */
+.hidden {
+    display: none;
 }

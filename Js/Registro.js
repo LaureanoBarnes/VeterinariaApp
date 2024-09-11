@@ -23,32 +23,15 @@ function mostrarMensaje(mensaje, tipo) {
     mensajeDiv.style.color = tipo === "exito" ? "green" : "red";
 }
 
-document.querySelectorAll("a, button").forEach(element => {
-    element.addEventListener("click", function(event) {
-        event.preventDefault();
-        const loader = document.getElementById("loader");
-        
-        // Prevenir que el loader se active varias veces
-        if (!loader.classList.contains("hidden")) {
-            return;
-        }
+function goBack() {
+    document.getElementById("loader").classList.remove("hidden");
+    setTimeout(function() {
+        window.history.back();
+    }, 1000);
+}
 
-        loader.classList.remove("hidden");
-
-        setTimeout(() => {
-            if (element.tagName === "A") {
-                window.location.href = element.href;
-            } else if (element.tagName === "BUTTON") {
-                if (window.history.length > 1) {
-                    window.history.back();
-                } else {
-                    window.location.href = 'index.html';
-                }
-            }
-
-            // Ocultar el loader automáticamente después de la acción
-            setTimeout(() => loader.classList.add("hidden"), 2000);
-        }, 1000);
+document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById("loader").classList.remove("hidden");
     });
-    loader.classList.remove('none');
 });

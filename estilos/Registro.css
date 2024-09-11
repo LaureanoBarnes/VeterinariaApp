@@ -94,6 +94,9 @@ button:active {
     transform: scale(0.95);
 }
 
+
+
+
 /* Loader overlay */
 .loader {
     position: fixed;
@@ -120,9 +123,6 @@ button:active {
     animation: spin 1.2s linear infinite;
 }
 
-.hidden {
-    display: none;
-}
 
 @keyframes spin {
     0% {
@@ -131,4 +131,8 @@ button:active {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.hidden {
+    display: none;
 }
