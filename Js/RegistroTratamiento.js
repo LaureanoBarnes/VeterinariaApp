@@ -25,5 +25,6 @@ document.querySelectorAll("a, button").forEach(element => {
             setTimeout(() => loader.classList.add("hidden"), 2000);
         }, 1000);
     });
+    loader.classList.remove('none');
 });
 
