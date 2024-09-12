@@ -113,3 +113,8 @@ body {
 .hidden {
     display: none;
 }
+
+::-webkit-scrollbar{
+    height: 0;
+    width: 0;
+    }

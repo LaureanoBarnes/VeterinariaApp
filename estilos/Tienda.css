@@ -67,7 +67,7 @@ body {
 }
 
 .breadcrumb a {
-    color: #FFF;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -154,4 +154,9 @@ body {
 /* Ocultar el loader */
 .hidden {
     display: none;
+}
+
+::-webkit-scrollbar{
+height: 0;
+width: 0;
 }
