@@ -91,7 +91,6 @@ button {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -109,14 +108,13 @@ button[type="submit"]:active, button[type="button"]:active {
     transform: scale(0.95);
 }
 
-
 button[type="button"] {
     background-color: #000000;
     color: #FFF;
     margin-top: 10px;
 }
 
-
+/* Loader */
 .loader {
     position: fixed;
     top: 0;
@@ -126,7 +124,7 @@ button[type="button"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 1000;
 }
 
@@ -137,13 +135,12 @@ button[type="button"] {
     height: 60px;
     border-radius: 50%;
     background-color: #C2E4F2;
-    border: 6px solid rgba(240, 192, 240, 0.5); /* Borde exterior */
-    border-top-color: #f0c; /* Color del borde superior */
+    border: 6px solid rgba(240, 192, 240, 0.5);
+    border-top-color: #f0c;
     animation: spin 1.2s linear infinite;
 }
 
-
-
+/* Animación del loader */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -163,7 +160,61 @@ button[type="button"] {
 .hidden {
     display: none;
 }
-::-webkit-scrollbar{
+
+/* Quitar scrollbar */
+::-webkit-scrollbar {
     height: 0;
     width: 0;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
     }
+
+    input[type="text"], select, textarea, input[type="number"] {
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .header-left span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+
+    input[type="text"], select, textarea, input[type="number"] {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .header-left img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header-left span {
+        font-size: 14px;
+    }
+}

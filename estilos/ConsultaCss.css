@@ -1,3 +1,4 @@
+/* General */
 body {
     font-family: Arial, sans-serif;
     background-color: #432a78;
@@ -9,6 +10,7 @@ body {
     height: 100vh;
 }
 
+/* Encabezado */
 .header {
     width: 100%;
     max-width: 430px;
@@ -41,6 +43,7 @@ body {
     height: 30px;
 }
 
+/* Consulta Container */
 .consulta-container {
     display: flex;
     justify-content: space-around;
@@ -71,35 +74,32 @@ body {
     margin: 0;
 }
 
-
+/* Loader */
 .loader {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;  /* Ancho total de la pantalla */
-    height: 100vh; /* Altura total de la pantalla */
+    width: 100vw;  
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    z-index: 1000; /* Asegura que esté por encima de todo */
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 1000;
 }
 
-/* Estilo del círculo del loader */
 .loader .spinner {
     position: relative;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #C2E4F2; /* Color del fondo */
-    border: 6px solid rgba(240, 192, 240, 0.5); /* Borde exterior */
-    border-top-color: #f0c; /* Color del borde superior */
+    background-color: #C2E4F2; 
+    border: 6px solid rgba(240, 192, 240, 0.5); 
+    border-top-color: #f0c; 
     animation: spin 1.2s linear infinite;
 }
 
-
-
-/* Keyframes para la animación de giro */
+/* Animación del loader */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -109,12 +109,53 @@ body {
     }
 }
 
-/* Ocultar el loader */
 .hidden {
     display: none;
 }
 
-::-webkit-scrollbar{
+/* Quitar scrollbar */
+::-webkit-scrollbar {
     height: 0;
     width: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .consulta-container {
+        flex-direction: column;
+        padding: 10px;
     }
+
+    .consulta-item {
+        margin-bottom: 20px;
+    }
+
+    .consulta-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .consulta-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-left img, .header-right img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .consulta-container {
+        padding: 8px;
+    }
+
+    .consulta-item img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .consulta-item p {
+        font-size: 12px;
+    }
+}

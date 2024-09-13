@@ -25,7 +25,6 @@ header img {
     height: 40px;
 }
 
-
 header h1 {
     font-size: 24px;
     color: #000;
@@ -35,7 +34,6 @@ header h2 {
     font-size: 18px;
     color: #575757;
 }
-
 
 .camilla {
     background-color: #f2f2f2;
@@ -78,10 +76,9 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: opacity 0.5s ease, transform 0.3s ease; /* Añadimos más tiempo a la opacidad */
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
-/* Diferentes estilos para cada botón */
 #reservar {
     background-color: #4CAF50; /* Verde */
     color: white;
@@ -97,13 +94,11 @@ button {
     color: white;
 }
 
-/* Animación al hacer hover sobre los botones */
 button:hover {
-    transform: scale(1.05); /* Aumenta el tamaño al pasar el ratón */
-    opacity: 0.9; /* Reduce ligeramente la opacidad */
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
-/* Transición para el cambio de estado entre botones */
 button.hidden {
     opacity: 0;
     pointer-events: none;
@@ -143,11 +138,10 @@ button.visible {
 }
 
 .camilla img {
-    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    width: 50px;
     display: block;
-    margin: 0 auto 10px; /* Centra la imagen y añade espacio debajo */
+    margin: 0 auto 10px;
 }
-
 
 .ficha-medica {
     background-color: #F2F2F2;
@@ -198,7 +192,7 @@ button.visible {
 }
 
 .ficha-medica.mostrar {
-    display: block;  /* Mostrar el modal */
+    display: block;
     opacity: 1;
     transform: translate(-50%, -50%);
 }
@@ -210,51 +204,45 @@ button.visible {
 }
 
 .modal-overlay.mostrar {
-    display: block; /* Mostrar el fondo */
+    display: block;
     opacity: 1;
 }
 
-/* Fondo semi-transparente cuando el modal esté abierto */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    display: none; /* Por defecto está oculto */
+    display: none;
 }
-
 
 .loader {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;  /* Ancho total de la pantalla */
-    height: 100vh; /* Altura total de la pantalla */
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    z-index: 1000; /* Asegura que esté por encima de todo */
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
 }
 
-/* Estilo del círculo del loader */
 .loader .spinner {
     position: relative;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #C2E4F2; /* Color del fondo */
-    border: 6px solid rgba(240, 192, 240, 0.5); /* Borde exterior */
-    border-top-color: #f0c; /* Color del borde superior */
+    background-color: #C2E4F2;
+    border: 6px solid rgba(240, 192, 240, 0.5);
+    border-top-color: #f0c;
     animation: spin 1.2s linear infinite;
 }
 
-
-
-/* Keyframes para la animación de giro */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -265,26 +253,59 @@ button.visible {
 }
 
 p.status-text {
-    font-family: 'Poppins', sans-serif; /* Cambia la fuente por una más estilizada */
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Añade una sombra suave */
-    transition: transform 0.3s ease, color 0.3s ease; /* Añade una animación suave */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 p.status-text:hover {
-    transform: scale(1.1); /* Hace que el texto se agrande al pasar el mouse por encima */
-    color: #f0c; /* Cambia de color al hacer hover */
+    transform: scale(1.1);
+    color: #f0c;
 }
 
-/* Ocultar el loader */
 .hidden {
     display: none;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     height: 0;
     width: 0;
+}
+
+/* Media Queries */
+
+/* Tablets (768px y mayores) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
     }
+
+    button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}
+
+/* Laptops y dispositivos grandes (1024px y mayores) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 14px 28px;
+    }
+}
